@@ -1,60 +1,52 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer" app clipped>
+      <v-list two-line>
+        <v-list-item class="align-center justify-center">
+          <v-list-item-avatar tile width="180px">
+            <v-img src="@/assets/logo.png"></v-img>
+          </v-list-item-avatar>
+        </v-list-item>
+        <v-divider></v-divider>
+        <v-list-item v-for="item in items" :key="item.text" link>
+          <v-list-item-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.text }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+    <v-app-bar app color="primary" dense dark clipped-left>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
-  name: 'App',
+  name: "App",
 
-  components: {
-    HelloWorld,
-  },
+  components: {},
 
   data: () => ({
-    //
-  }),
+    items: [
+      { icon: "mdi-view-dashboard", text: "信息总览" },
+      { icon: "mdi-home-city", text: "场景模式" },
+      { icon: "mdi-movie-outline", text: "房间区域" },
+      { icon: "mdi-air-conditioner", text: "环境天气" },
+      { icon: "mdi-bookmark-multiple", text: "设备管理" },
+      { icon: "mdi-bookmark-multiple", text: "关于我们" }
+    ]
+  })
 };
 </script>
+
+
+<style scoped>
+.img {
+  width: 200px;
+}
+</style>
