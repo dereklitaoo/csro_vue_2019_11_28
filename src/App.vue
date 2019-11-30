@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app clipped dark color="blue-grey darken-1">
+    <v-navigation-drawer v-model="drawer" app clipped dark color="blue-grey darken-3">
       <v-list two-line>
         <v-list-item class="align-center justify-center">
           <v-list-item-avatar tile width="180px">
@@ -20,7 +20,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ item.text }}</v-list-item-title>
+            <v-list-item-title class="font-weight-light">{{ item.text }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -28,6 +28,9 @@
 
     <v-app-bar app color="primary" dense dark clipped-left>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title class="align-center font-weight-light">壹品慧居</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-title class="align-center font-weight-light">2019-11-30 23:31</v-toolbar-title>
     </v-app-bar>
     <v-content>
       <router-view></router-view>
@@ -47,13 +50,18 @@ export default {
   components: {},
 
   data: () => ({
+    drawer: null,
     items: [
       { icon: "mdi-view-dashboard", text: "信息总览", path: "/" },
       { icon: "mdi-home-city", text: "场景模式", path: "/Scenes" },
-      { icon: "mdi-movie-outline", text: "房间区域", path: "/" },
-      { icon: "mdi-air-conditioner", text: "环境天气", path: "/" },
-      { icon: "mdi-bookmark-multiple", text: "设备管理", path: "/" },
-      { icon: "mdi-bookmark-multiple", text: "关于我们", path: "/" }
+      { icon: "mdi-movie-outline", text: "房间区域", path: "/Roomarea" },
+      { icon: "mdi-air-conditioner", text: "环境天气", path: "/Environment" },
+      {
+        icon: "mdi-bookmark-multiple",
+        text: "设备管理",
+        path: "/Devicemanage"
+      },
+      { icon: "mdi-bookmark-multiple", text: "关于我们", path: "/About" }
     ]
   })
 };
