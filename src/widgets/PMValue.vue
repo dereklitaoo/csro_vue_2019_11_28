@@ -6,9 +6,10 @@
       width="30%"
       height="100%"
       color="amber"
-      class="d-flex justify-center align-center"
+      class="d-flex flex-column justify-center align-center"
     >
       <v-icon size="50" color="white">mdi-grain</v-icon>
+      <v-text class="pt-1 d-flex justify-center align-top white--text">PM2.5</v-text>
     </v-sheet>
     <v-sheet
       tile

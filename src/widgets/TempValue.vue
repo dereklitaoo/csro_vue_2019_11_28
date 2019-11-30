@@ -6,9 +6,10 @@
       width="30%"
       height="100%"
       color="primary"
-      class="d-flex justify-center align-center"
+      class="d-flex flex-column justify-center align-center"
     >
       <v-icon size="50" color="white">mdi-home-thermometer-outline</v-icon>
+      <v-text class="pt-1 d-flex justify-center align-top white--text">温度</v-text>
     </v-sheet>
     <v-sheet
       tile
