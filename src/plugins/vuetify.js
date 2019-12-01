@@ -1,7 +1,11 @@
 import Vue from "vue";
 import Vuetify from "vuetify/lib";
+import VueApexCharts from "vue-apexcharts";
 
+Vue.use(VueApexCharts);
 Vue.use(Vuetify);
+
+Vue.component("apexchart", VueApexCharts);
 
 export default new Vuetify({
   theme: {
