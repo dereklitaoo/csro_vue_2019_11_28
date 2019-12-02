@@ -1,11 +1,30 @@
 <template>
-  <v-card height="350px" class="d-flex justify-center align-top">
-    <apexchart
-      type="radialBar"
-      height="300"
-      :options="chartOptions"
-      :series="series"
-    />
+  <v-card height="350px" class="d-flex justify-center align-center">
+    <v-container class="pa-0">
+      <v-row>
+        <v-col cols="12" class="d-flex justify-center align-center">
+          <v-btn-toggle v-model="toggle_exclusive">
+            <v-btn color="light-blue lighten-4">
+              <v-icon left>mdi-weather-sunny</v-icon>制热
+            </v-btn>
+            <v-btn color="light-blue lighten-4">
+              <v-icon left>mdi-snowflake</v-icon>制冷
+            </v-btn>
+            <v-btn color="light-blue lighten-4">
+              <v-icon left>mdi-snowflake</v-icon>除湿
+            </v-btn>
+            <v-btn color="light-blue lighten-4">
+              <v-icon left>mdi-snowflake</v-icon>通风
+            </v-btn>
+          </v-btn-toggle>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12" class="d-flex justify-center align-center">
+          <apexchart type="radialBar" height="300" :options="chartOptions" :series="series" />
+        </v-col>
+      </v-row>
+    </v-container>
   </v-card>
 </template>
 
